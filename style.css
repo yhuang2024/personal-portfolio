@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css2?family=Lusitana);
+
+* {
+    font-family: 'Lusitana', Georgia, serif;
+}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+hr {
+    color: rgb(90,90,90);
+    height: 2%;
+    width: 100%;
+}
+body {
+    background-color: white;
+    color: rgb(90,90,90);
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+.pageButton {
+    border-radius: 0;
+    background-color: rgb(255,255,255);
+    padding: 1% 4%;
+    border: none;
+    color: rgb(0,0,0);
+    font-size: large;
+    border: 1px solid;
+    margin: 1%;
+    box-shadow: 5px 5px 0px black;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.pageButton:hover {
+    background-color: rgb(242,242,242);
+    box-shadow: 6px 6px 0px black;
+    cursor: pointer;
+}
+
+#banner {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    padding: 5% 0 0 0 ;
+    overflow: hidden;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-color: green;
+    background-size: cover;
+    overflow: hidden;
+}
+
+@media (max-width: 500px) {
+    #banner {
+        padding: 15% 0 0 0 ;
+        color: whitesmoke;
+    }
+}
