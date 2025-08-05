@@ -2,16 +2,35 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="stylesheet" href="project.css">
+        <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Projects</title>
     </head>
     <body>
+        <div class="wrapper">
+            <div class="navbar container">
+                <a id="name" class="alignable pull-left" href="index.html">Yuyuan Huang</a>
+                <ul id="navlist" class="alignable pull-right navbar-ul">
+                    <li class="alignable pull-left nav-list">
+                        <a href="projects.html">Projects</a>
+                    </li>
+                    <li class="alignable pull-left nav-list">
+                        <a href="research.html">Research</a>
+                    </li>
+                    <li class="alignable pull-left nav-list">
+                        <a href="writing.html">Writing</a>
+                    </li>
+                    <li class="alignable pull-left nav-list">
+                        <a href="/Huang_Yuyuan_Resume.pdf">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <div id="projects-body">
             <div id="projects-content">
                 <h2 class="illuminate-title">Illuminate</h2>
                 <div class="button-container">
-                    <button class="btn btn-color-2 project-btn" onClick="location.href='https://youtu.be/HFoPpniBW40'">
+                    <button class="buttons" onClick="location.href='https://youtu.be/HFoPpniBW40'">
                         Demo
                     </button>
                 </div>
@@ -22,7 +41,7 @@
                     positive feedback from 10+ users.
                 </blockquote>
                 <div class="button-container">
-                    <button class="btn btn-color-2 project-btn" onClick="location.href='https://github.com/lijune-choi1/gendertracker'">
+                    <button class="buttons" onClick="location.href='https://github.com/lijune-choi1/gendertracker'">
                         Github
                     </button>
                 </div>
@@ -38,16 +57,16 @@
                     knowledge and generate targeted feedback.
                 </blockquote>
                 <div class="button-container">
-                    <button class="btn btn-color-2 project-btn" onClick="location.href='https://github.com/yhuang2024/debatebase'">
+                    <button class="buttons" onClick="location.href='https://github.com/yhuang2024/debatebase'">
                         Github
                     </button>
                 </div>
                 <h2 class="wordle-title">Wordle</h2>
                 <img src="wordle1.png">
                 <img src="wordle2.png">
-                <a 
-                    href="https://docs.google.com/document/d/1XX8XKnEnwEVRAnzEs3YVXwxxlqeCAWHjZvGHuB2j0Qs/edit?usp=sharing"
-                    target="_blank">User Guide</a>
+                <button class="buttons" onClick="location.href='https://docs.google.com/document/d/1XX8XKnEnwEVRAnzEs3YVXwxxlqeCAWHjZvGHuB2j0Qs/edit?usp=sharing'">
+                        User Guide
+                    </button>
                 <blockquote>
                     Built an interactive JavaFX-based version of Wordle with both human and 
                     computer-playable modes, emphasizing intuitive, engaging, and accessible 

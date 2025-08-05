@@ -39,6 +39,19 @@ body {
     cursor: pointer;
 }
 
+#banner {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    padding: 5% 0 0 0 ;
+    overflow: hidden;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-color: green;
+    background-size: cover;
+    overflow: hidden;
+}
+
 @media (max-width: 500px) {
     #banner {
         padding: 15% 0 0 0 ;
@@ -49,7 +62,6 @@ body {
 .wrapper {
     width: 100%;
     background-color: #679E6C;
-    /* background-image: url("Little\ House\ on\ the\ Prairie.jpeg"); */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -65,7 +77,7 @@ body {
 #name {
     font-size: 1.5em;
     font-weight: bold;
-    color: #ffffff;
+    color: #333;
     text-decoration: none;
     padding: 15px 0;
 }
@@ -83,13 +95,13 @@ body {
 
 .nav-list a {
     text-decoration: none;
-    color: #ffffff;
+    color: #555;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-list a:hover {
-    color: #F5EB90;
+    color: #ffffff;
 }
 
 @media (max-width: 768px) {
@@ -104,37 +116,4 @@ body {
     .nav-list {
         margin: 10px 0;
     }
-}
-
-.headshot {
-    width: auto;
-    height: 250px;
-    border: 10px solid #A69880;
-    border-radius: 20px;
-    box-shadow: 0 0 15px #F5EB90;
-}
-
-.button-container {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding-left: 40px;
-}
-
-.buttons {
-    background-color: #679E6C;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.buttons:hover {
-    background-color: #246229;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
