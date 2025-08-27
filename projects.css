@@ -77,7 +77,7 @@ body {
 #name {
     font-size: 1.5em;
     font-weight: bold;
-    color: #333;
+    color: white;
     text-decoration: none;
     padding: 15px 0;
 }
@@ -95,13 +95,13 @@ body {
 
 .nav-list a {
     text-decoration: none;
-    color: #555;
+    color: white;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-list a:hover {
-    color: #ffffff;
+    color: #F5EB90;
 }
 
 @media (max-width: 768px) {
@@ -116,4 +116,105 @@ body {
     .nav-list {
         margin: 10px 0;
     }
+}
+
+.gallery {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.gallery-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.project-slide {
+    min-width: 100%;
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+}
+
+.project-slide h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project-slide img {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-shadow: 1px 1px 6px rgba(0,0,0,0.1);
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #679E6C;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+}
+
+button.prev { left: 2px; }
+button.next { right: 2px; }
+
+button.prev:hover, 
+button.next:hover {
+    background-color: #246229;
+}
+
+.buttons {
+    background-color: #679E6C;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buttons:hover {
+    background-color: #246229;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.image-pair {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.image-pair img {
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
 }
