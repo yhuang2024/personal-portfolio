@@ -1,68 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Research</title>
-    </head>
-    <body>
-        <div class="wrapper">
-            <div class="navbar container">
-                <a id="name" class="alignable pull-left" href="index.html">~YH~</a>
-                <ul id="navlist" class="alignable pull-right navbar-ul">
-                    <li class="alignable pull-left nav-list">
-                        <a href="projects.html">Projects</a>
-                    </li>
-                    <li class="alignable pull-left nav-list">
-                        <a href="research.html">Research</a>
-                    </li>
-                    <li class="alignable pull-left nav-list">
-                        <a href="writing.html">Writing</a>
-                    </li>
-                    <li class="alignable pull-left nav-list">
-                        <a href="/Huang_Yuyuan_Resume.pdf">Resume</a>
-                    </li>
-                </ul>
-            </div>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="research.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="navbar container">
+            <a id="name" class="alignable pull-left" href="index.html">~YH~</a>
+            <ul id="navlist" class="alignable pull-right navbar-ul">
+                <li class="alignable pull-left nav-list">
+                    <a href="projects.html">Projects</a>
+                </li>
+                <li class="alignable pull-left nav-list">
+                    <a href="research.html">Research</a>
+                </li>
+                <li class="alignable pull-left nav-list">
+                    <a href="writing.html">Writing</a>
+                </li>
+                <li class="alignable pull-left nav-list">
+                    <a href="/Huang_Yuyuan_Resume.pdf">Resume</a>
+                </li>
+            </ul>
         </div>
-        <div id="research-body">
-            <div id="research-content">
-                <h2 class="aires-title">Low-Resource Language Models for Kurdish and Narragansett</h2>
-                <blockquote>
-                    Developed low-resource language models for Kurdish and Narragansett using 
-                    BERT and HuggingFace in Python, contributing to more inclusive natural language 
-                    processing technology for 1,800+ people in underserved linguistic communities 
-                    across Rhode Island. Focused on equitable language model training, bias detection, 
-                    and linguistic preservation.
-                </blockquote>
-                <div class="button-container">
-                    <button class="buttons" onClick="location.href='https://airesbrown.wixsite.com/mysite'">
-                        Research Group Website
-                    </button>
+    </div>
+
+    <div id="research-body">
+        <div class="gallery">
+            <div class="gallery-track">
+                <div class="project-slide">
+                    <h2 class="aires-title">Low-Resource Language Models for Kurdish and Narragansett</h2>
+                    <blockquote>
+                        Developed low-resource language models for Kurdish and Narragansett using 
+                        BERT and HuggingFace in Python, contributing to more inclusive natural language 
+                        processing technology for 1,800+ people in underserved linguistic communities 
+                        across Rhode Island. Focused on equitable language model training, bias detection, 
+                        and linguistic preservation.
+                    </blockquote>
+                    <div class="button-container">
+                        <button class="buttons" onClick="location.href='https://airesbrown.wixsite.com/mysite'">
+                            Research Group Website
+                        </button>
+                        <button class="buttons" onClick="location.href='https://github.com/jinholee17/airesNLP'">
+                            Github
+                        </button>
+                    </div>
                 </div>
-                <h2 class="harvard-title">Urban Air Quality Analysis in Chinatown</h2>
-                <blockquote>
-                    Built a Python tool integrating web scraping and generative AI to streamline 
-                    literature reviews on PubMed, reducing manual search time by 25%. Analyzed urban 
-                    air quality disparities in disadvantaged Boston neighborhoods using Python, R, and Excel. 
-                    Presented findings to 200+ community members at Tufts Medical Center and Boston 
-                    Chinatown Neighborhood Center to inform advocacy efforts.
-                </blockquote>
-                <h2 class="usd-title">Direct Air Capture via Metal-Organic Supercontainers</h2>
+                <div class="project-slide">
+                    <h2 class="harvard-title">Urban Air Quality Analysis in Chinatown</h2>
+                    <blockquote>
+                        Built a Python tool integrating web scraping and generative AI to streamline 
+                        literature reviews on PubMed, reducing manual search time by 25%. Analyzed urban 
+                        air quality disparities in disadvantaged Boston neighborhoods using Python, R, and Excel. 
+                        Presented findings to 200+ community members at Tufts Medical Center and Boston 
+                        Chinatown Neighborhood Center to inform advocacy efforts.
+                    </blockquote>
+                </div>
+                <div class="project-slide">
+                    <h2 class="usd-title">Direct Air Capture via Metal-Organic Supercontainers</h2>
                 <img src="mosc.png">
-                <blockquote>
-                    Conducted experiments in direct air carbon capture and drug delivery. Applied computational 
-                    and statistical tools for data interpretation in Python, R, and Microsoft Excel. Conducted 
-                    literature reviews, authored and edited grant proposals, graduate-level theses, and research 
-                    papers. Presented findings at American Chemical Society Regional Conferences (2022, 2023).
-                </blockquote>
-                <div class="button-container">
-                    <button class="buttons" onClick="location.href='https://usd.technologypublisher.com/tech/Metal-Organic_Super-Containers'">
-                        Learn More
-                    </button>
+                    <blockquote>
+                        Conducted experiments in direct air carbon capture and drug delivery. Applied computational 
+                        and statistical tools for data interpretation in Python, R, and Microsoft Excel. Conducted 
+                        literature reviews, authored and edited grant proposals, graduate-level theses, and research 
+                        papers. Presented findings at American Chemical Society Regional Conferences (2022, 2023).
+                    </blockquote>
+                    <div class="button-container">
+                        <button class="buttons" onClick="location.href='https://usd.technologypublisher.com/tech/Metal-Organic_Super-Containers'">
+                            Learn More
+                        </button>
+                    </div>
                 </div>
             </div>
+            <button class="prev">&laquo;</button>
+            <button class="next">&raquo;</button>
         </div>
-    </body>
+    </div>
+
+    <script>
+      const track = document.querySelector(".gallery-track");
+      const slides = Array.from(track.children);
+      const prevButton = document.querySelector(".prev");
+      const nextButton = document.querySelector(".next");
+      let currentIndex = 0;
+
+      function updateSlide(index) {
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlide(currentIndex);
+      });
+
+      nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlide(currentIndex);
+      });
+    </script>
+</body>
 </html>
