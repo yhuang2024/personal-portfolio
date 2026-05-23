@@ -7,6 +7,32 @@ const ResearchPage: React.FC = () => {
 
   const slides = [
     {
+      title: "AI Usage For Therapeutic Support and its Landscape of Accountability",
+      titleClass: "accountability-title",
+      content: (
+        <>
+          <blockquote>
+            A technical and ethical study of college students' perceptions of the use of 
+            general-purpose AI chatbots in therapeutic settings and the legal and corporate 
+            accountability frameworks for such agents in situations of harm. Presented at the
+            2026 Annual Boston Security Usability Research Day Conference at Tufts University and
+            Brown University's 11th Annual Undergraduate Computer Science Research Symposium.
+          </blockquote>
+
+          <div className="button-container">
+            <button
+              className="buttons"
+              onClick={() =>
+                window.open("/Assets/Documents/AI_Accountability_Paper.pdf", "_blank")
+              }
+            >
+              Paper preprint
+            </button>
+          </div>
+        </>
+      ),
+    },
+    {
       title: "Low-Resource Language Models for Kurdish and Narragansett",
       titleClass: "aires-title",
       content: (

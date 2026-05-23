@@ -7,6 +7,74 @@ const ProjectsPage: React.FC = () => {
 
   const slides = [
     {
+      title: "C@Bnet",
+      titleClass: "cabnet-title",
+      content: (
+        <>
+          <blockquote>
+            Developing a Chrome extension to add integrated course ratings/warnings, 
+            a complex decision tree-based recommendation system, and degree pathway 
+            visualization to the current Courses@Brown website used by all Brown students 
+            and professors for course registration. Source code available upon request.
+          </blockquote>
+        </>
+      ),
+    },
+    {
+      title: "Warning: No Service - An Analysis and Visualization of Unequal Social Service Distribution Within the New York City Housing Authority (NYCHA)",
+      titleClass: "nycha-title",
+      content: (
+        <>
+          <img
+            src="/Assets/Images/nycha.png"
+            alt="NYCHA Project"
+          />
+          
+          <blockquote>
+            Developed a full-stack data dashboard analyzing the relationship between 
+            access to social services and economic mobility within New York City Housing 
+            Authority (NYCHA) public housing developments using Python, Plotly, TypeScript 
+            with React, and HTML/CSS, focusing on creative digital storytelling.
+          </blockquote>
+
+          <div className="button-container">
+            <button
+              className="buttons"
+              onClick={() =>
+                window.open("https://nycha-dashboard.vercel.app/", "_blank")
+              }
+            >
+              Website
+            </button>
+
+            <button
+              className="buttons"
+              onClick={() =>
+                window.open("https://github.com/yhuang2024/nycha-dashboard", "_blank")
+              }
+            >
+              Github
+            </button>
+          </div>
+        </>
+      ),
+    },
+    {
+      title: "iMessage Wrapped",
+      titleClass: "message-title",
+      content: (
+        <>
+          <blockquote>
+            Built a full-stack animated analytics dashboard for Apple iMessage 
+            group chat data using Python, Plotly, TypeScript with React, and Framer 
+            Motion. Designed interactive, sequentially animated data visualizations 
+            with SVG rendering, focusing on creative digital storytelling. Source code 
+            available upon request.
+          </blockquote>
+        </>
+      ),
+    },
+    {
       title: "Gaze-Tracking Glasses Indicator",
       titleClass: "medtronic-title",
       content: (
