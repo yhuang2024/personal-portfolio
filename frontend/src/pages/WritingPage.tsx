@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'react-router-dom'
 import '../styles/writing.css'
 
 const WritingPage: React.FC = () => {
@@ -6,21 +7,21 @@ const WritingPage: React.FC = () => {
     <div>
       <div className="wrapper">
         <div className="navbar container">
-          <a id="name" className="alignable pull-left" href="/">
+          <Link id="name" className="alignable pull-left" to="/">
             ~YH~
-          </a>
+          </Link>
 
           <ul id="navlist" className="alignable pull-right navbar-ul">
             <li className="alignable pull-left nav-list">
-              <a href="/projects">Projects</a>
+              <Link to="/projects">Projects</Link>
             </li>
 
             <li className="alignable pull-left nav-list">
-              <a href="/research">Research</a>
+              <Link to="/research">Research</Link>
             </li>
 
             <li className="alignable pull-left nav-list">
-              <a href="/writing">Writing</a>
+              <Link to="/writing">Writing</Link>
             </li>
 
             <li className="alignable pull-left nav-list">

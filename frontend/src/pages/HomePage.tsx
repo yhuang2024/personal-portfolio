@@ -1,60 +1,31 @@
 import React from "react"
+import { Link } from 'react-router-dom'
 import '../styles/home.css'
 
-type PageKey = 'home' | 'projects' | 'research' | 'writing'
-
-interface PageProps {
-  onNavigate: (page: PageKey) => void
-}
-
-const HomePage: React.FC<PageProps> = ({ onNavigate }) => {
+const HomePage: React.FC = () => {
   return (
     <div>
       <div className="wrapper">
         <div className="navbar container">
-          <a id="name" className="alignable pull-left" href="/">
+          <Link id="name" className="alignable pull-left" to="/">
             ~YH~
-          </a>
+          </Link>
 
           <ul id="navlist" className="alignable pull-right navbar-ul">
             <li className="alignable pull-left nav-list">
-                <a
-                    href="#"
-                    onClick={(event) => {
-                    event.preventDefault()
-                    onNavigate('projects')
-                    }}
-                >
-                    Projects
-                </a>
+              <Link to="/projects">Projects</Link>
             </li>
 
             <li className="alignable pull-left nav-list">
-            <a
-                href="#"
-                onClick={(event) => {
-                event.preventDefault()
-                onNavigate('research')
-                }}
-            >
-                Research
-            </a>
+              <Link to="/research">Research</Link>
             </li>
 
             <li className="alignable pull-left nav-list">
-            <a
-                href="#"
-                onClick={(event) => {
-                event.preventDefault()
-                onNavigate('writing')
-                }}
-            >
-                Writing
-            </a>
+              <Link to="/writing">Writing</Link>
             </li>
 
             <li className="alignable pull-left nav-list">
-              <a href="/Assets/Documents/Huang_Yuyuan_Resume.pdf">
+              <a href="/Assets/Documents/Huang_Fullstack_Resume.pdf">
                 Resume
               </a>
             </li>

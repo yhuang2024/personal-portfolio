@@ -1,19 +1,20 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import ProjectsPage from './pages/ProjectsPage'
 import ResearchPage from './pages/ResearchPage'
 import WritingPage from './pages/WritingPage'
 
 function App() {
-  const [page, setPage] = useState<'home' | 'projects' | 'research' | 'writing'>('home')
-
   return (
-    <>
-      {page === 'home' && <HomePage onNavigate={setPage} />}
-      {page === 'projects' && <ProjectsPage />}
-      {page === 'research' && <ResearchPage />}
-      {page === 'writing' && <WritingPage />}
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/research" element={<ResearchPage />} />
+        <Route path="/writing" element={<WritingPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
