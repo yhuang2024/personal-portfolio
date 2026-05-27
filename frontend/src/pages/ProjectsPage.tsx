@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import { Link } from 'react-router-dom'
 import '../styles/projects.css'
+import NavBar from '../components/NavBar'
 
 const ProjectsPage: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -220,31 +220,7 @@ const ProjectsPage: React.FC = () => {
 
   return (
     <div>
-      <div className="wrapper">
-        <div className="navbar container">
-          <Link id="name" className="alignable pull-left" to="/">
-            ~YH~
-          </Link>
-
-          <ul id="navlist" className="alignable pull-right navbar-ul">
-            <li className="alignable pull-left nav-list">
-              <Link to="/projects">Projects</Link>
-            </li>
-
-            <li className="alignable pull-left nav-list">
-              <Link to="/research">Research</Link>
-            </li>
-
-            <li className="alignable pull-left nav-list">
-              <Link to="/writing">Writing</Link>
-            </li>
-
-            <li className="alignable pull-left nav-list">
-              <a href="/Huang_Yuyuan_Resume.pdf">Resume</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <NavBar />
 
       <div id="projects-body">
         <div className="gallery">
