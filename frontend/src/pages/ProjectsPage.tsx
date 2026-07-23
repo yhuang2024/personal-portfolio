@@ -4,11 +4,11 @@ import NavBar from '../components/NavBar'
 
 const ProjectsPage: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [flippedIndex, setFlippedIndex] = useState<number | null>(null)
 
   const slides = [
     {
       title: "C@Bnet",
-      titleClass: "cabnet-title",
       content: (
         <>
           <blockquote>
@@ -22,14 +22,9 @@ const ProjectsPage: React.FC = () => {
     },
     {
       title: "Warning: No Service - An Analysis and Visualization of Unequal Social Service Distribution Within the New York City Housing Authority (NYCHA)",
-      titleClass: "nycha-title",
+      image: "/Assets/Images/nycha.png",
       content: (
         <>
-          <img
-            src="/Assets/Images/nycha.png"
-            alt="NYCHA Project"
-          />
-          
           <blockquote>
             Developed a full-stack data dashboard analyzing the relationship between 
             access to social services and economic mobility within New York City Housing 
@@ -37,12 +32,18 @@ const ProjectsPage: React.FC = () => {
             with React, and HTML/CSS, focusing on creative digital storytelling.
           </blockquote>
 
-          <div className="button-container">
+          <div
+            className="button-container"
+            onClick={(event) => event.stopPropagation()}
+            onPointerDown={(event) => event.stopPropagation()}
+          >
             <button
               className="buttons"
-              onClick={() =>
+              onClick={(event) => {
+                event.stopPropagation()
                 window.open("https://nycha-dashboard.vercel.app/", "_blank")
               }
+            }
             >
               Website
             </button>
@@ -61,7 +62,6 @@ const ProjectsPage: React.FC = () => {
     },
     {
       title: "iMessage Wrapped",
-      titleClass: "message-title",
       content: (
         <>
           <blockquote>
@@ -76,14 +76,9 @@ const ProjectsPage: React.FC = () => {
     },
     {
       title: "Gaze-Tracking Glasses Indicator",
-      titleClass: "medtronic-title",
+      image: "/Assets/Images/presentation.jpg",
       content: (
         <>
-          <img
-            src="/Assets/Images/presentation.jpg"
-            alt="Medtronic Project"
-          />
-
           <blockquote>
             Developed a real-time gaze-tracking data visualization tool for
             Medtronic's HUGO surgical robot display using QML, C++, and Python
@@ -99,14 +94,9 @@ const ProjectsPage: React.FC = () => {
     },
     {
       title: "Illuminate",
-      titleClass: "illuminate-title",
+      image: "/Assets/Images/illuminate.png",
       content: (
         <>
-          <img
-            src="/Assets/Images/illuminate.png"
-            alt="Illuminate Project"
-          />
-
           <blockquote>
             Engineered an inclusive language full-stack web tool utilizing
             spaCy NLP to promote gender-neutral expression in writing,
@@ -114,12 +104,18 @@ const ProjectsPage: React.FC = () => {
             Hack@Brown 2025 and received positive feedback from 10+ users.
           </blockquote>
 
-          <div className="button-container">
+          <div
+            className="button-container"
+            onClick={(event) => event.stopPropagation()}
+            onPointerDown={(event) => event.stopPropagation()}
+          >
             <button
               className="buttons"
-              onClick={() =>
+              onClick={(event) => {
+                event.stopPropagation()
                 window.open("https://youtu.be/HFoPpniBW40", "_blank")
               }
+            }
             >
               Demo
             </button>
@@ -141,14 +137,9 @@ const ProjectsPage: React.FC = () => {
     },
     {
       title: "DebateBase",
-      titleClass: "debatebase-title",
+      image: "/Assets/Images/debatebase.png",
       content: (
         <>
-          <img
-            src="/Assets/Images/debatebase.png"
-            alt="DebateBase Project"
-          />
-
           <blockquote>
             Developed a full-stack user-centered educational web platform to
             support 30+ underrepresented youth debaters in the Boston area with
@@ -160,15 +151,21 @@ const ProjectsPage: React.FC = () => {
             targeted feedback.
           </blockquote>
 
-          <div className="button-container">
+          <div
+            className="button-container"
+            onClick={(event) => event.stopPropagation()}
+            onPointerDown={(event) => event.stopPropagation()}
+          >
             <button
               className="buttons"
-              onClick={() =>
+              onClick={(event) => {
+                event.stopPropagation()
                 window.open(
                   "https://github.com/yhuang2024/debatebase",
                   "_blank"
                 )
               }
+            }
             >
               Github
             </button>
@@ -178,7 +175,6 @@ const ProjectsPage: React.FC = () => {
     },
     {
       title: "Wordle",
-      titleClass: "wordle-title",
       content: (
         <>
           <div className="image-pair">
@@ -196,12 +192,14 @@ const ProjectsPage: React.FC = () => {
 
           <button
             className="buttons"
-            onClick={() =>
+            onClick={(event) => {
+              event.stopPropagation()
               window.open(
                 "https://docs.google.com/document/d/1XX8XKnEnwEVRAnzEs3YVXwxxlqeCAWHjZvGHuB2j0Qs/edit?usp=sharing",
                 "_blank"
               )
             }
+          }
           >
             User Guide
           </button>
@@ -221,7 +219,6 @@ const ProjectsPage: React.FC = () => {
   return (
     <div>
       <NavBar />
-
       <div id="projects-body">
         <div className="gallery">
           <div
@@ -232,19 +229,77 @@ const ProjectsPage: React.FC = () => {
               transition: "transform 0.5s ease-in-out",
             }}
           >
-            {slides.map((slide, index) => (
-              <div
-                key={index}
-                className="project-slide"
-                style={{
-                  minWidth: "100%",
-                }}
-              >
-                <h2 className={slide.titleClass}>{slide.title}</h2>
+            {slides.map((slide, index) => {
+              const isFlipped = flippedIndex === index
 
-                {slide.content}
-              </div>
-            ))}
+              const flipCard = () => {
+                setFlippedIndex(isFlipped ? null : index)
+              }
+            
+              const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault()
+                  flipCard()
+                }
+              }
+            
+              const handleBackClick = (event: React.MouseEvent<HTMLDivElement>) => {
+                const target = event.target as HTMLElement
+            
+                if (target.closest("button, a")) {
+                  return
+                }
+            
+                flipCard()
+              }
+            
+              return (
+                <div
+                  key={index}
+                  className="project-slide"
+                  style={{ minWidth: "100%" }}
+                >
+                  <div
+                    className={`project-card ${isFlipped ? "is-flipped" : ""}`}
+                    onKeyDown={handleKeyDown}
+                    role="button"
+                    tabIndex={0}
+                    aria-pressed={isFlipped}
+                    aria-label={`Flip ${slide.title} project card`}
+                  >
+                    <div className="project-card-inner">
+                      <div
+                        className={`project-card-face project-card-front ${
+                          slide.image ? "has-image" : ""
+                         }`}
+                         
+                         onClick={flipCard}
+                      >
+                      {slide.image && (
+                        <img
+                          className="front-image"
+                          src={slide.image}
+                          alt={slide.title}
+                        />
+                      )}
+            
+                      <div className="front-content">
+                        <h2>{slide.title}</h2>
+                      </div>
+                    </div>
+            
+                    <div
+                      className="project-card-face project-card-back"
+                      onClick={handleBackClick}
+                    >
+                      {slide.content}
+                    </div>
+                    
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
           </div>
 
           <button className="prev" onClick={prevSlide}>

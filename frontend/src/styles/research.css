@@ -229,22 +229,6 @@ button.next:hover {
     max-width: 90%;
 }
 
-.flip-hint {
-    position: relative;
-    z-index: 2;
-    display: block;
-    width: 100%;
-    margin-top: 24px;
-    text-align: center;
-    font-size: 0.85rem;
-    opacity: 0.75;
-}
-
-.research-card-back .flip-hint {
-    flex-shrink: 0;
-    text-align: center;
-}
-
 @media (max-width: 600px) {
     .project-slide {
         height: 650px;
@@ -279,14 +263,6 @@ button.next:hover {
     object-fit: cover;
 }
 
-.research-card-back .button-container,
-.research-card-back .flip-hint {
-    align-self: stretch;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-}
-
 .research-card-back .button-container {
     align-self: center;
     display: flex;
@@ -307,15 +283,6 @@ button.next:hover {
     margin: 0;
 }
 
-.research-card-back .flip-hint {
-    align-self: center;
-    display: block;
-    width: 100%;
-    margin: 24px 0 0;
-    text-align: center;
-}
-
-/* Only the visible face should receive pointer events. */
 .research-card-front {
     pointer-events: auto;
 }

@@ -32,8 +32,7 @@ const ResearchPage: React.FC = () => {
       content: (
         <>
           <blockquote>
-            An audit of behavior, privacy, and security concerns in AI companions for older adults. Accepted
-            at USENIX Security 2027.
+            An audit of behavior, privacy, and security concerns in AI companions for older adults.
           </blockquote>
         </>
       ),
@@ -255,7 +254,6 @@ const ResearchPage: React.FC = () => {
 
                         <div className="front-content">
                           <h2>{slide.title}</h2>
-                          <span className="flip-hint">Click to view research</span>
                         </div>
                       </div>
 
@@ -264,7 +262,6 @@ const ResearchPage: React.FC = () => {
                         onClick={handleBackClick}
                       >
                         {slide.content}
-                        <span className="flip-hint">Click to flip back</span>
                       </div>
                     </div>
                   </div>
