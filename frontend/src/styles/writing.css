@@ -60,198 +60,44 @@ body {
     }
 }
 
-/* setting up book */
+/* using animations from react-pageflip library */
 .flipbook {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem 0;
+  width: 100%;
+  padding: 3rem 0 4rem;
 }
 
 .book {
-  position: relative;
-  width: min(950px, 95vw);
-  height: min(620px, 70vw);
-  perspective: 2200px;
+  max-width: 95vw;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.14);
 }
 
-/* adding some stacked pages for a realistic effect */
-.book::before,
-.book::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 2px;
-  background: #f7f4ee;
-  box-shadow: 0 0 12px rgba(0,0,0,0.08), 0 0 2px rgba(0,0,0,0.12);
-}
-
-.book::before {
-  transform: translate(6px, 6px);
-  z-index: 0;
-}
-
-.book::after {
-  transform: translate(12px, 12px);
-  z-index: -1;
-}
-
-/* pages */
-.page {
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  background: #fffdf8;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-.page-content {
+.demoPage {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  padding: 48px;
+  background: #fffdf8;
+  overflow: hidden;
+}
+
+.page-panel {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: clamp(1.5rem, 5vw, 3rem);
   overflow-y: auto;
   line-height: 1.8;
   color: rgb(70,70,70);
   font-size: 1rem;
-
-  /* text stability */
-  -webkit-font-smoothing: antialiased;
-  text-rendering: geometricPrecision;
-  transform: translateZ(1px);
-  backface-visibility: hidden;
-  will-change: opacity;
 }
 
-/* logic for page turns */
-.left-page {
-  left: 0;
-  z-index: 1;
-  border-right: 1px solid rgba(0,0,0,0.08);
-  box-shadow: inset -8px 0 18px rgba(0,0,0,0.06), 0 0 15px rgba(0,0,0,0.08);
+.page-panel h2,
+.page-panel h3 {
+  margin-top: 0;
 }
 
-.next-page {
-  right: 0;
-  z-index: 1;
-  border-left: 1px solid rgba(0,0,0,0.05);
-  box-shadow: inset 8px 0 18px rgba(0,0,0,0.05);
-}
-
-.flipping-page {
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  z-index: 20;
-  background: #fffdf8;
-  overflow: hidden;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  will-change: transform;
-  contain: layout paint style;
-  box-shadow: 0 0 30px rgba(0,0,0,0.18);
-}
-
-/* forward flip */
-.flip-next {
-  right: 0;
-  transform-origin: left center;
-  border-left: 1px solid rgba(0,0,0,0.08);
-  animation: flipNext 1.25s cubic-bezier(.22,.61,.36,1) forwards;
-}
-
-/* backward flip */
-.flip-prev {
-  left: 0;
-  transform-origin: right center;
-  border-right: 1px solid rgba(0,0,0,0.08);
-  animation: flipPrev 1s ease-in-out forwards;
-}
-
-.flipping-page::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      to right,
-      rgba(0,0,0,0.12),
-      rgba(255,255,255,0.02) 12%,
-      transparent 30%
-    );
-  pointer-events: none;
-}
-
-/* animating page motion */
-@keyframes flipNext {
-  0% {
-    transform: rotateY(0deg);
-  }
-
-  50% {
-    transform: rotateY(-90deg);
-
-    box-shadow:
-      -35px 0 45px rgba(0,0,0,0.25);
-  }
-
-  100% {
-    transform: rotateY(-180deg);
-  }
-}
-
-@keyframes flipPrev {
-  0% {
-    transform: rotateY(0deg);
-  }
-
-  50% {
-    transform: rotateY(90deg);
-
-    box-shadow:
-      35px 0 45px rgba(0,0,0,0.25);
-  }
-
-  100% {
-    transform: rotateY(180deg);
-  }
-}
-
-/* center spine */
-.book::marker {
-  display: none;
-}
-
-.book-spine {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 18px;
-  height: 100%;
-  z-index: 10;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.35);
-}
-
-/* controls */
-.controls {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
-}
-
-.page,
-.left-page,
-.next-page,
-.flipping-page {
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-}
-
-.flip-next .page-content,
-.flip-prev .page-content {
-  overflow: hidden;
+.page-panel a {
+  color: inherit;
 }

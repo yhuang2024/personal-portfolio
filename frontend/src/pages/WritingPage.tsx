@@ -7,6 +7,21 @@ const WritingPage: React.FC = () => {
   const pages: React.ReactNode[] = [
     (
       <div className="page-panel">
+        <h1 className="index-title">Table of Contents</h1>
+        <h2 className="poetry">Poetry</h2>
+        <h3 className="2022">2022....................................................2</h3>
+        <h3 className="2022">2023....................................................3</h3>
+        <h3 className="2022">2024...................................................4</h3>
+        <h3 className="2022">2025....................................................5</h3>
+        <h1 className="blank">                                                        </h1>
+        <h2 className="academic">Academic</h2>
+        <h3 className="cs">CS...............................................................6</h3>
+        <h3 className="lit">Literature...............................................................7</h3>
+      </div>
+    ),
+
+    (
+      <div className="page-panel">
         <h2 className="poetry-title">Poetry</h2>
         <h3 className="2022-title">2022</h3>
         <ul>
@@ -68,6 +83,13 @@ const WritingPage: React.FC = () => {
     (
       <div className="page-panel">
         <h2 className="academic-title">Academic</h2>
+        <h3 className="cs-title">Computer Science</h3>
+        <ul>
+          <li>
+            <a href="/Assets/Documents/AI_Accountability_Paper.pdf" target="_blank" rel="noopener noreferrer">AI Usage For Therapeutic Support and its Landscape of Accountability</a> (December 2025)
+          </li>
+        </ul>
+        <h3 className="lit-title">Literature</h3>
         <ul>
           <li>
             <a href="https://docs.google.com/document/d/10mzFSeeb2C0HMVw39HPptAJCWxQa15Y2/edit?usp=sharing&ouid=113381762479866801465&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">The Poetic Politics of Forugh Farrokhzad and Simin Behbahani</a>, <em>Journal of Middle East Studies</em> (December 2023)
