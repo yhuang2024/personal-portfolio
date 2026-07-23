@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar'
 
 const ResearchPage: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
-
+  const [flippedIndex, setFlippedIndex] = useState<number | null>(null)
   const slides = [
     {
       title: "Sextortion",
@@ -61,12 +61,20 @@ const ResearchPage: React.FC = () => {
             Brown University's 11th Annual Undergraduate Computer Science Research Symposium.
           </blockquote>
 
-          <div className="button-container">
+          <div
+            className="button-container"
+            onClick={(event) => event.stopPropagation()}
+            onPointerDown={(event) => event.stopPropagation()}
+          >
             <button
               className="buttons"
-              onClick={() =>
-                window.open("/Assets/Documents/AI_Accountability_Paper.pdf", "_blank")
-              }
+              onClick={(event) => {
+                event.stopPropagation()
+                window.open(
+                  "/Assets/Documents/AI_Accountability_Paper.pdf",
+                  "_blank"
+                )
+              }}
             >
               Paper preprint
             </button>
@@ -87,27 +95,27 @@ const ResearchPage: React.FC = () => {
             preservation.
           </blockquote>
 
-          <div className="button-container">
+          <div
+            className="button-container"
+            onClick={(event) => event.stopPropagation()}
+            onPointerDown={(event) => event.stopPropagation()}
+          >
             <button
               className="buttons"
-              onClick={() =>
-                window.open(
-                  "https://airesbrown.wixsite.com/mysite",
-                  "_blank"
-                )
-              }
+              onClick={(event) => {
+                event.stopPropagation()
+                window.open("https://airesbrown.wixsite.com/mysite", "_blank")
+              }}
             >
               Research Group Website
             </button>
 
             <button
               className="buttons"
-              onClick={() =>
-                window.open(
-                  "https://github.com/jinholee17/airesNLP",
-                  "_blank"
-                )
-              }
+              onClick={(event) => {
+                event.stopPropagation()
+                window.open("https://github.com/jinholee17/airesNLP", "_blank")
+              }}
             >
               Github
             </button>
@@ -133,13 +141,9 @@ const ResearchPage: React.FC = () => {
     },
     {
       title: "Direct Air Capture via Metal-Organic Supercontainers",
+      image: "/Assets/Images/mosc.png",
       content: (
         <>
-          <img
-            src="/Assets/Images/mosc.png"
-            alt="Metal-Organic Supercontainers"
-          />
-
           <blockquote>
             Conducted experiments in direct air carbon capture and drug
             delivery. Applied computational and statistical tools for data
@@ -149,15 +153,20 @@ const ResearchPage: React.FC = () => {
             American Chemical Society Regional Conferences (2022, 2023).
           </blockquote>
 
-          <div className="button-container">
+          <div
+            className="button-container"
+            onClick={(event) => event.stopPropagation()}
+            onPointerDown={(event) => event.stopPropagation()}
+          >
             <button
               className="buttons"
-              onClick={() =>
+              onClick={(event) => {
+                event.stopPropagation()
                 window.open(
                   "https://usd.technologypublisher.com/tech/Metal-Organic_Super-Containers",
                   "_blank"
                 )
-              }
+              }}
             >
               Learn More
             </button>
@@ -189,19 +198,79 @@ const ResearchPage: React.FC = () => {
               transition: "transform 0.5s ease-in-out",
             }}
           >
-            {slides.map((slide, index) => (
-              <div
-                key={index}
-                className="project-slide"
-                style={{
-                  minWidth: "100%",
-                }}
-              >
-                <h2>{slide.title}</h2>
+            {slides.map((slide, index) => {
+              const isFlipped = flippedIndex === index
 
-                {slide.content}
-              </div>
-            ))}
+              const flipCard = () => {
+                setFlippedIndex(isFlipped ? null : index)
+              }
+
+              const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault()
+                  flipCard()
+                }
+              }
+
+              const handleBackClick = (
+                event: React.MouseEvent<HTMLDivElement>
+              ) => {
+                const target = event.target as HTMLElement
+
+                if (target.closest("button, a")) {
+                  return
+                }
+
+                flipCard()
+              }
+
+              return (
+                <div
+                  key={index}
+                  className="project-slide"
+                  style={{ minWidth: "100%" }}
+                >
+                  <div
+                    className={`research-card ${isFlipped ? "is-flipped" : ""}`}
+                    onKeyDown={handleKeyDown}
+                    role="button"
+                    tabIndex={0}
+                    aria-pressed={isFlipped}
+                    aria-label={`Flip ${slide.title} research card`}
+                  >
+                    <div className="research-card-inner">
+                      <div
+                        className={`research-card-face research-card-front ${
+                          slide.image ? "has-image" : ""
+                        }`}
+                        onClick={flipCard}
+                      >
+                        {slide.image && (
+                          <img
+                            className="front-image"
+                            src={slide.image}
+                            alt={slide.title}
+                          />
+                        )}
+
+                        <div className="front-content">
+                          <h2>{slide.title}</h2>
+                          <span className="flip-hint">Click to view research</span>
+                        </div>
+                      </div>
+
+                      <div
+                        className="research-card-face research-card-back"
+                        onClick={handleBackClick}
+                      >
+                        {slide.content}
+                        <span className="flip-hint">Click to flip back</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
           </div>
 
           <button className="prev" onClick={prevSlide}>

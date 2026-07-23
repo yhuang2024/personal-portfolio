@@ -39,7 +39,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     justify-content: center;
 }
 
@@ -104,4 +103,237 @@ button.next { right: 2px; }
 button.prev:hover, 
 button.next:hover {
     background-color: #246229;
+}
+
+.gallery {
+    perspective: 1200px;
+}
+
+.project-slide {
+    height: 620px;
+    box-sizing: border-box;
+    padding: 24px 50px;
+}
+
+.research-card {
+    width: min(760px, 100%);
+    height: 100%;
+    cursor: pointer;
+    perspective: 1200px;
+    outline: none;
+}
+
+.research-card:focus-visible {
+    outline: 3px solid #679e6c;
+    outline-offset: 6px;
+}
+
+.research-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.65s ease;
+}
+
+.research-card.is-flipped .research-card-inner {
+    transform: rotateY(180deg);
+}
+
+.research-card-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.14);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.research-card-front {
+    background: #679e6c;
+    color: white;
+    text-align: center;
+}
+
+.research-card-front h2 {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 85%;
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
+.front-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.front-image {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: opacity 0.35s ease;
+}
+
+.research-card-front.has-image:hover .front-image {
+    opacity: 0;
+}
+
+.research-card-front.has-image:not(:hover) .front-content {
+    opacity: 0;
+}
+
+.research-card-front.has-image:hover .front-content {
+    opacity: 1;
+}
+
+.research-card-back {
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    transform: rotateY(180deg);
+    color: rgb(90, 90, 90);
+}
+
+.research-card-back h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.research-card-back blockquote {
+    max-width: 90%;
+}
+
+.flip-hint {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+
+.research-card-back .flip-hint {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .project-slide {
+        height: 650px;
+        padding: 20px 42px;
+    }
+
+    .research-card-face {
+        padding: 24px;
+    }
+
+    .research-card-front h2 {
+        font-size: 28px;
+    }
+
+    .front-image {
+        padding: 0;
+    }
+}
+
+.research-card-front img.front-image {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.research-card-back .button-container,
+.research-card-back .flip-hint {
+    align-self: stretch;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.research-card-back .button-container {
+    align-self: center;
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
+    margin: 16px auto 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.research-card-back .buttons {
+    display: block;
+    flex: 0 0 auto;
+    margin: 0;
+}
+
+.research-card-back .flip-hint {
+    align-self: center;
+    display: block;
+    width: 100%;
+    margin: 24px 0 0;
+    text-align: center;
+}
+
+/* Only the visible face should receive pointer events. */
+.research-card-front {
+    pointer-events: auto;
+}
+
+.research-card-back {
+    pointer-events: none;
+}
+
+.research-card.is-flipped .research-card-front {
+    pointer-events: none;
+}
+
+.research-card.is-flipped .research-card-back {
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.research-card.is-flipped .research-card-back .button-container,
+.research-card.is-flipped .research-card-back .buttons {
+    pointer-events: auto;
 }
