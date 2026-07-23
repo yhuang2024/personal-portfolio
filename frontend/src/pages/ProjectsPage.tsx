@@ -256,7 +256,7 @@ const ProjectsPage: React.FC = () => {
               return (
                 <div
                   key={index}
-                  className="project-slide"
+                  className="projects-slide"
                   style={{ minWidth: "100%" }}
                 >
                   <div

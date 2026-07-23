@@ -75,10 +75,15 @@ button.next:hover {
     perspective: 1200px;
 }
 
-.project-slide {
+.projects-slide {
     height: 620px;
     box-sizing: border-box;
     padding: 24px 50px;
+}
+
+.projects-slide h2 {
+    margin-bottom: 10px;
+    color: white;
 }
 
 .project-card {
