@@ -72,6 +72,33 @@ body {
 .book {
   max-width: 95vw;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.14);
+  position: relative;
+  isolation: isolate;
+  z-index: 0;
+}
+
+/* stacking for a realistic effect */
+.book::before,
+.book::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 3px;
+  background: #f7f4ee;
+}
+
+.book::before {
+  transform: translate(7px, 7px);
+  z-index: -1;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.14), 5px 5px 0 #eeeae2,
+  10px 10px 0 #e7e2d9,
+  0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.book::after {
+  transform: translate(13px, 13px);
+  z-index: -2;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
 }
 
 .demoPage {
