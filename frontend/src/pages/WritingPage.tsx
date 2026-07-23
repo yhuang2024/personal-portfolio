@@ -70,7 +70,7 @@ const WritingPage: React.FC = () => {
         <h2 className="academic-title">Academic</h2>
         <ul>
           <li>
-            <a href="https://docs.google.com/document/d/10mzFSeeb2C0HMVw39HPptAJCWxQa15Y2/edit?usp=sharing&ouid=113381762479866801465&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">The Poetic Politics of Forugh Farrokhzad and Simin Behbahani</a>, <em>The Concord Review</em> (December 2023)
+            <a href="https://docs.google.com/document/d/10mzFSeeb2C0HMVw39HPptAJCWxQa15Y2/edit?usp=sharing&ouid=113381762479866801465&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">The Poetic Politics of Forugh Farrokhzad and Simin Behbahani</a>, <em>Journal of Middle East Studies</em> (December 2023)
           </li>
           <li>
             <a href="/Assets/Documents/guanyin.pdf" target="_blank" rel="noopener noreferrer">Guanyin: Savior, Mentor, Model Buddhist</a>, <em>Journal of Chinese Overseas</em> (January 2025)

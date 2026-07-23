@@ -31,7 +31,7 @@ const HomePage: React.FC = () => {
             ╰┈➤ Hello! My name is Yuyuan Huang and I'm a student at Brown
             University.
             <br />
-            ╰┈➤ B.Sc in Computer Science; B.A in International and Public Affairs (Public Policy Track)
+            ╰┈➤ Sc.B in Computer Science; B.A in International and Public Affairs (Public Policy Track)
             <br />
           </blockquote>
 
@@ -92,7 +92,9 @@ const HomePage: React.FC = () => {
               software engineering class
             </a>
             , emphasizing safe and sustainable development practices in the CS
-            curriculum at Brown.
+            curriculum at Brown. I'm also a researcher in the Human-Computer Interaction 
+            Lab under Dr. Jeff Huang and the Sociotechnical Wellbeing Research Lab under
+            Dr. Diana Freed. 
           </blockquote>
 
           <blockquote>

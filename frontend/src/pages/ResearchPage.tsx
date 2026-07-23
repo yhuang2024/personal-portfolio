@@ -7,8 +7,50 @@ const ResearchPage: React.FC = () => {
 
   const slides = [
     {
+      title: "Sextortion",
+      content: (
+        <>
+          <blockquote>
+            An analysis of youth-facilitated digital sexual violence and sextortion.
+          </blockquote>
+        </>
+      ),
+    },
+    {
+      title: "Wearables",
+      content: (
+        <>
+          <blockquote>
+            An environment analysis of the privacy and sociological risks of using AI wearables for 
+            adolescent psychosocial support.
+          </blockquote>
+        </>
+      ),
+    },
+    {
+      title: "Lessons From Auditing AI Companions for Older Adults",
+      content: (
+        <>
+          <blockquote>
+            An audit of behavior, privacy, and security concerns in AI companions for older adults. Accepted
+            at USENIX Security 2027.
+          </blockquote>
+        </>
+      ),
+    },
+    {
+      title: "Detect, Don't Treat, Don't Abandon: The Trilemma of AI Chatbots and the Need for Human Handoff",
+      content: (
+        <>
+          <blockquote>
+            An analysis applying product liability and negligence doctrines to the use of AI chatbots
+            in mental health contexts. 
+          </blockquote>
+        </>
+      ),
+    },
+    {
       title: "AI Usage For Therapeutic Support and its Landscape of Accountability",
-      titleClass: "accountability-title",
       content: (
         <>
           <blockquote>
@@ -34,7 +76,6 @@ const ResearchPage: React.FC = () => {
     },
     {
       title: "Low-Resource Language Models for Kurdish and Narragansett",
-      titleClass: "aires-title",
       content: (
         <>
           <blockquote>
@@ -76,7 +117,6 @@ const ResearchPage: React.FC = () => {
     },
     {
       title: "Urban Air Quality Analysis in Chinatown",
-      titleClass: "harvard-title",
       content: (
         <>
           <blockquote>
@@ -93,7 +133,6 @@ const ResearchPage: React.FC = () => {
     },
     {
       title: "Direct Air Capture via Metal-Organic Supercontainers",
-      titleClass: "usd-title",
       content: (
         <>
           <img
@@ -158,7 +197,7 @@ const ResearchPage: React.FC = () => {
                   minWidth: "100%",
                 }}
               >
-                <h2 className={slide.titleClass}>{slide.title}</h2>
+                <h2>{slide.title}</h2>
 
                 {slide.content}
               </div>
