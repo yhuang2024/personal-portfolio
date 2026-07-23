@@ -1,6 +1,6 @@
 # Yuyuan Huang's Personal Portfolio
-Made in HTML, CSS, and Javascript. Work in progress!
+Made in TypeScript, JavaScript, and a dash of HTMl/CSS. Work in progress!
 
-Things I have learned so far through making this website: hover effects, making a reactive slide-through gallery for photos and text, and a general refresher of HTML/CSS.
+Things I have learned so far through making this website: hover effects, making a reactive slide-through gallery for photos and text, interactive page-flipping book to display my writing, React and routing, animation, and more to come!
 
-Next steps: bedazzling my homepage and poetry page and refactoring with React and Typescript (which I am in the process of learning)!
+Next steps: adding more details about my HCI research, adding cool animations between pages for smoother UI, and updating deployment to Vercel.
