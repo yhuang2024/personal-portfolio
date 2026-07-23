@@ -8,6 +8,19 @@ const ProjectsPage: React.FC = () => {
 
   const slides = [
     {
+      title: "LexFactor",
+      image: "/Assets/Images/lexfactor.png",
+      content: (
+        <>
+          <blockquote>
+            Developing an AI-enabled platform in TypeScript for law students and students in Brown's
+            CSCI 1400 (Generative AI and the Law) class to learn, practice, and summarize cases
+            using the Socratic method. Used by 300+ students at Brown University.
+          </blockquote>
+        </>
+      ),
+    },
+    {
       title: "C@Bnet",
       content: (
         <>
